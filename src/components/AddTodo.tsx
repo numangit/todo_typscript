@@ -8,7 +8,7 @@ const AddTodo = (props: Props) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const newTodo = {
-            id: new Date().getTime.toString(),
+            id: Math.random().toString(5).substring(2, 9),
             title
         };
         props.handleAddTitle(newTodo);
