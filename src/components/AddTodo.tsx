@@ -1,12 +1,26 @@
-import { useState } from "react"
+import { FormEvent, useState } from "react"
+import { todoData } from "../data/data";
 
-type Props = {}
+type Props = {
+    handleAddTitle: Function;
+}
 
 const AddTodo = (props: Props) => {
     const [title, setTitle] = useState("");
 
+    //function to handle submit
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const newTodo = {
+            id: new Date().getTime.toString(),
+            title
+        };
+        props.handleAddTitle(newTodo);
+        setTitle("");
+    };
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="relative flex">
                 {/* <label htmlFor="Title" className="text-slate-50 font-semibold">Add Todo</label> */}
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required autoFocus placeholder="Add Todo" className="w-full rounded-md bg-slate-700 border-gray-200 py-2.5 pr-10 shadow-sm sm:text-sm text-white" />

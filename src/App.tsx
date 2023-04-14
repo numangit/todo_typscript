@@ -3,6 +3,7 @@ import './App.css'
 import Todos from './components/Todos';
 import { todoData } from './data/data';
 import AddTodo from './components/AddTodo';
+import { TodoType } from './types';
 
 function App() {
 
@@ -14,11 +15,16 @@ function App() {
     setTodos(filteredTodos);
   };
 
+  //function to add title
+  const handleAddTitle = (todo: TodoType) => {
+
+  };
+
   return (
     <div className='flex items-center justify-center bg-slate-900 h-screen'>
       <div className='w-1/2'>
         <h1 className='text-5xl text-center text-white font-bold mb-5'>Todo List</h1>
-        <AddTodo />
+        <AddTodo handleAddTitle={handleAddTitle} />
         <Todos todos={todos} handleDeleteTodo={handleDeleteTodo} />
       </div>
     </div>
