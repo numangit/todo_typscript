@@ -1,10 +1,5 @@
-import { TodoType } from "../types";
+import { TodosProps } from "../types";
 import Todo from "./Todo";
-
-type TodosProps = {
-    todos: TodoType[];
-    handleDeleteTodo: Function;
-}
 
 const Todos = (props: TodosProps) => {
     return (

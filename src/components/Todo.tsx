@@ -1,9 +1,4 @@
-import { TodoType } from "../types";
-
-type TodoProps = {
-    todo: TodoType;
-    handleDeleteTodo: Function;
-}
+import { TodoProps } from "../types";
 
 const Todo = (props: TodoProps) => {
 
