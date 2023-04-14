@@ -15,8 +15,10 @@ function App() {
   const [task, setTask] = useState<Task>();
   const [todos, setTodos] = useState(todoData);
 
+  //function to delete
   const handleDeleteTodo = (id: string) => {
-
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
   };
 
   return (
