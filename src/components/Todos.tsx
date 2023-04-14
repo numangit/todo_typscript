@@ -1,21 +1,17 @@
+import { TodoType } from "../types";
 import Todo from "./Todo";
 
-type TodosType = {
-    todos: {
-        id: string;
-        title: string;
-    }[],
-    todo: {
-        id: string;
-        title: string;
-    }
+type TodosProps = {
+    todos: TodoType[],
 }
 
-const Todos = (props: TodosType) => {
+const Todos = (props: TodosProps) => {
     return (
-        <div>
-            {props.todos.map((todo) => <Todo key={todo.id} todo={todo} />)}
-        </div>
+        <section>
+            {props.todos.map((todo) => (
+                <Todo key={todo.id} todo={todo} />
+            ))}
+        </section>
     )
 }
 
