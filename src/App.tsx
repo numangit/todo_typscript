@@ -17,7 +17,7 @@ function App() {
 
   //function to add title
   const handleAddTitle = (todo: TodoType) => {
-
+    setTodos([...todos, todo]);
   };
 
   return (

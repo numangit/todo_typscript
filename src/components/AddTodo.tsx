@@ -1,9 +1,5 @@
 import { FormEvent, useState } from "react"
-import { todoData } from "../data/data";
-
-type Props = {
-    handleAddTitle: Function;
-}
+import { Props } from "../types";
 
 const AddTodo = (props: Props) => {
     const [title, setTitle] = useState("");

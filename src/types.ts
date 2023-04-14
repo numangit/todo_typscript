@@ -12,3 +12,7 @@ export type TodosProps = {
     todos: TodoType[];
     handleDeleteTodo: Function;
 }
+
+export type Props = {
+    handleAddTitle: Function;
+}
